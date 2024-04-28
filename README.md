@@ -30,4 +30,8 @@ Install [AutoHotkey](https://www.autohotkey.com) v1.1 (not v2). Then right click
 
 Contributors are all welcome! I'm more likely to accept pull requests that address something in the todo list. If you have a suggestion or criticism, feel free to create a github issue about it.
 
+### Why AutoHotkey?
+
+This program doesn't actually use hotkeys at all, I'm just most comfortable with this language, and its GUI system is very straightforward.
+
 Disclaimer: This software is in no way affiliated with twitch.tv
