@@ -2,6 +2,10 @@
 
 Play a sound file and/or read aloud a viewer's message with text-to-speech when they redeem a channel point reward
 
+### Why not just use <alternative software> in an OBS browser source?
+
+Software like that has to process redemptions on a third-party server, which can have some really bad connection issues. This program instead connects directly from your PC to the Twitch API to read redemptions. Technically this reacts to redemptions faster than they even show up in Twitch chat!
+
 ![GUI Screenshot](GUI_Screenshot.png?raw=true)
 
 ### Installation:
