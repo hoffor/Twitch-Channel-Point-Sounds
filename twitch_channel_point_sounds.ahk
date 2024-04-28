@@ -771,7 +771,7 @@ AddItem:
 		}
 	} until (RowText1)
 	
-	FileSelectFile,RowText2,,,,% "Audio (*.wav; *.mp3; *.flac; *.ogg; *.opus; *.aac)"
+	FileSelectFile,RowText2,,,,% "Audio (*.wav)"
 	if (ErrorLevel != 0) ; 0 = OK
 		return
 	
