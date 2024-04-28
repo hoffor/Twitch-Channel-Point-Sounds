@@ -1,3 +1,6 @@
+playsound only plays wav files, so it'd be nice to replace it with something else if possible
+also maybe it'd be good to have sounds overlap and not cut each other off but PlaySound can't do that so this might be a big task
+
 allow user to select tts voice and have the program use reg script to add Mark. i'd just put the option in the popup when you add a new tts
 
 inform the user the app is or will minimize to tray
@@ -13,8 +16,6 @@ running AddAccount which runs SetAsLinked will make validate happen twice in a r
 add an easy update button that direct downloads the exe and inserts it exactly where it's supposed to
 
 WaitForResponse() with no timeout param is supposed to wait infinitely, but it times out nearly instantly if it doesn't receive a response... what's the deal here? it's technically behaving in my program the way i want it to, so for now i'll set this aside i guess
-
-maybe it'd be good to have sounds overlap and not cut each other off but PlaySound can't do that so this might be a big task
 
 add a stop all sounds button
 
