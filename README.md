@@ -9,7 +9,7 @@ Software like that has to process redemptions on a third-party server, which can
 ![GUI Screenshot](GUI_Screenshot.png?raw=true)
 
 ### Installation:
-Unzip the "Twitch Channel Point Sounds" folder anywhere and run the .exe! If you want, you can right click the .exe and "Send to > Desktop (Create shortcut)".
+Grab the latest [release](https://github.com/hoffr/Twitch-Channel-Point-Sounds/releases) (Twitch-Channel-Point-Sounds.zip), unzip the "Twitch Channel Point Sounds" folder anywhere and run the .exe. If you want, you can right click the .exe and "Send to > Desktop (Create shortcut)".
 
 ### How to use: 
 
