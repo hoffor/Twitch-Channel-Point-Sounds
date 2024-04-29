@@ -1,3 +1,5 @@
+for user safety, hide access token in console output and warn before showing it on the github.io page
+
 playsound only plays wav files, so it'd be nice to replace it with something else if possible
 also maybe it'd be good to have sounds overlap and not cut each other off but PlaySound can't do that so this might be a big task
 
