@@ -1,3 +1,8 @@
+mayb turn critical off for some of the listview gui stuff after they're finished
+actually i dont even remember why i'm using critical there but is it possible that could stall an open connection or the validate timer?
+
+need to only allow wav files when editing a listview item
+
 for user safety, hide access token in console output and warn before showing it on the github.io page
 
 playsound only plays wav files, so it'd be nice to replace it with something else if possible
