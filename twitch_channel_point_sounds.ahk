@@ -34,7 +34,7 @@ Init:
     #NoTrayIcon
     SetBatchLines, -1
     ComObjError(0) ; prevents it from yelling at me when i try to check an element that doesnt exist, else var check must be wrapped in a try statement
-	version := "1.0.0"
+	version := "1.0.1"
 
     ; set up for minimizing to tray
     DetectHiddenWindows,On
