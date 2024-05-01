@@ -751,6 +751,7 @@ MyListView:
 	{
 		EditItemFunc(A_EventInfo)
 	}
+	Critical,Off
 return
 
 
@@ -761,7 +762,10 @@ AddItem:
 	{
 		InputBox,RowText1,% "Redeem name"
 		if (ErrorLevel != 0) ; 0 = OK
+		{
+			Critical,Off
 			return
+		}
 		if (RowText1 = "")
 			msgbox,% "Text field cannot be blank, try again"
 		if (InStr(RowText1,"\") || InStr(RowText1,"""") || InStr(RowText1,"|"))
@@ -773,8 +777,10 @@ AddItem:
 	
 	FileSelectFile,RowText2,,,,% "Audio (*.wav)"
 	if (ErrorLevel != 0) ; 0 = OK
+	{
+		Critical,Off
 		return
-	
+	}
 	Random,sectionName,10000000000,99999999999
 	
 	IniWrite,% """" RowText1 """",% iniFileName,% sectionName,% "RedeemName"
@@ -782,6 +788,7 @@ AddItem:
 	
 	gosub,DeleteAllRows
 	gosub,LoadINI
+	Critical,Off
 return
 
 
@@ -790,6 +797,7 @@ AddTTS:
 	Gui +OwnDialogs
 	if tts_redeem_name
 	{
+		Critical,Off
 		msgbox,% "Only one TTS can be present. Please remove the existing TTS entry before adding a new one"
 		return
 	}
@@ -797,7 +805,10 @@ AddTTS:
 	{
 		InputBox,RowText1,% "Redeem name"
 		if (ErrorLevel != 0) ; 0 = OK
+		{
+			Critical,Off
 			return
+		}
 		if (RowText1 = "")
 			msgbox,% "Text field cannot be blank, try again"
 		if (InStr(RowText1,"\") || InStr(RowText1,"""") || InStr(RowText1,"|"))
@@ -814,6 +825,7 @@ AddTTS:
 	
 	gosub,DeleteAllRows
 	gosub,LoadINI
+	Critical,Off
 return
 
 
@@ -821,6 +833,7 @@ EditItemLabel:
 	Critical,On
 	Gui +OwnDialogs
 	EditItemFunc(LV_GetNext())
+	Critical,Off
 return
 
 
@@ -847,7 +860,7 @@ EditItemFunc(selectedRow:="")
 	
 	if (RowText2_prev != "Text-to-speech engine")
 	{
-		FileSelectFile,RowText2,,,,% "Audio (*.wav; *.mp3; *.flac; *.ogg; *.opus; *.aac)"
+		FileSelectFile,RowText2,,,,% "Audio (*.wav)"
 		if (ErrorLevel != 0) ; 0 = OK
 			return
 	} else
@@ -878,6 +891,7 @@ RemoveItem:
     
 	gosub,DeleteAllRows
 	gosub,LoadINI
+	Critical,Off
 return
 
 
@@ -899,15 +913,17 @@ TestSound:
 	soundTestRow := ""
 	LV_GetText(soundTestRow, LV_GetNext(), 2)
 	if !soundTestRow
+	{
+		Critical,Off
 		return
-	
+	}
 	if (soundTestRow != "Text-to-speech engine")
 	{
 		settimer,ReleaseSoundFile,% GetAudioDuration(soundTestRow) * -1
 		PlaySound(soundTestRow)
 	} else
 		TTS(soundTestRow)
-
+	Critical,Off
 return
 
 
