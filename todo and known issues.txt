@@ -13,10 +13,6 @@ WaitForResponse() with no timeout param is supposed to wait infinitely, but it t
 completed:
 ----------
 
-X add some Critical,Off for some subs
-
-X need to only allow wav files when editing a listview item
-
 
 -----
 IDEAS
