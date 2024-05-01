@@ -1,7 +1,28 @@
-mayb turn critical off for some of the listview gui stuff after they're finished
-actually i dont even remember why i'm using critical there but is it possible that could stall an open connection or the validate timer?
+------
+ISSUES
+------
 
-need to only allow wav files when editing a listview item
+for some gui subs i dont remember why i'm using critical there but is it possible that could stall an open connection or the validate timer?
+
+clicking add account and entering a garbage value will ungrey out the enable monitor button. if you click the button tho it's not a huge deal it just says connection isnt good
+
+running AddAccount which runs SetAsLinked will make validate happen twice in a row. same with program start's validate call immediately coming before SetAsLinked
+
+WaitForResponse() with no timeout param is supposed to wait infinitely, but it times out nearly instantly if it doesn't receive a response... what's the deal here? it's technically behaving in my program the way i want it to, so for now i'll set this aside i guess
+
+completed:
+----------
+
+X add some Critical,Off for some subs
+
+X need to only allow wav files when editing a listview item
+
+
+-----
+IDEAS
+-----
+
+tbh could use some more comments describing the purpose of things
 
 for user safety, hide access token in console output and warn before showing it on the github.io page
 
@@ -16,13 +37,7 @@ inform the user the app is or will minimize to tray
 
 print to console the results of adding/removing/revoking account links
 
-clicking add account and entering a garbage value will ungrey out the enable monitor button. if you click the button tho it's not a huge deal it just says connection isnt good
-
-running AddAccount which runs SetAsLinked will make validate happen twice in a row. same with program start's validate call immediately coming before SetAsLinked
-
 add an easy update button that direct downloads the exe and inserts it exactly where it's supposed to
-
-WaitForResponse() with no timeout param is supposed to wait infinitely, but it times out nearly instantly if it doesn't receive a response... what's the deal here? it's technically behaving in my program the way i want it to, so for now i'll set this aside i guess
 
 add a stop all sounds button
 
