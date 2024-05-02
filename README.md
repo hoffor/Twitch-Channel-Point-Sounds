@@ -9,7 +9,7 @@ Software like that has to process redemptions on a third-party server, which can
 ![GUI Screenshot](GUI_Screenshot.png?raw=true)
 
 ### Installation:
-Grab the latest [release](https://github.com/hoffr/Twitch-Channel-Point-Sounds/releases) (Twitch-Channel-Point-Sounds.zip), unzip the "Twitch Channel Point Sounds" folder anywhere and run the .exe. If you want, you can right click the .exe and "Send to > Desktop (Create shortcut)".
+Grab the latest [release](https://github.com/hoffr/Twitch-Channel-Point-Sounds/releases) (Twitch-Channel-Point-Sounds.zip), unzip the "twitch_channel_point_sounds" folder anywhere and run the .exe. If you want, you can right click the .exe and "Send to > Desktop (Create shortcut)".
 
 ### How to use: 
 
@@ -22,6 +22,8 @@ I recommend jumping right into using the program, but here are some instructions
 3. On the right side of the window, enter the channel name you want sound reactions for and click "Enable Monitor" to connect! Don't stress reading the technical console output, it's just there if you wanted clues about a connection error or something.
 
 Done! You can just minimize to tray. Now when a user redeems something, its corresponding sound will play. Or if it's a text-to-speech redeem, the TTS will read aloud their message. Have fun!
+
+Also, if you want to use Microsoft Mark as a text-to-speech voice instead of David, just run the included .reg file and restart the app.
 
 ### Reporting a bug:
 

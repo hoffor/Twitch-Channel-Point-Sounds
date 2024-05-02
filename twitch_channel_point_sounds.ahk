@@ -34,8 +34,8 @@ Init:
     #NoTrayIcon
     SetBatchLines, -1
     ComObjError(0) ; prevents it from yelling at me when i try to check an element that doesnt exist, else var check must be wrapped in a try statement
-	version := "1.0.1"
-
+	version := "1.0.2"
+	
     ; set up for minimizing to tray
     DetectHiddenWindows,On
     Menu,Tray,Click,1
@@ -73,7 +73,10 @@ Init:
     if FileExist(A_ScriptDir . "\connect_on_start.txt")
         FileRead,connect_on_start,% A_ScriptDir . "\connect_on_start.txt"
     else
-        FileAppend,,% A_ScriptDir . "\connect_on_start.txt",UTF-8
+        FileAppend,% "0",% A_ScriptDir . "\connect_on_start.txt",UTF-8
+		
+	if (connect_on_start = "")
+		connect_on_start := 0
 
     Gui, Add, Button, w100 x5 y251 gModifyLink vButtonLinkStatus,% ""
     Gui, Add, Text, w490 x115 y255 cGreen vTextLinkStatus,% ""
@@ -113,7 +116,7 @@ Init:
 	Gui,Font,cBlack
 
 	Gui, Add, Link,x5 y290, <a href="https://github.com/hoffr/Twitch-Channel-Point-Sounds/issues">Report a bug</a> | <a href="https://github.com/hoffr/Twitch-Channel-Point-Sounds/releases">Check for updates</a> | Channel Point Sounds v%version% by hoffer
-
+	
 	Gui, Add, CheckBox, x620 y290 vconnect_on_start gCheckboxConnectOnStart Checked%connect_on_start%, Connect to channel on program start
 
     Gui, Show,,% "Twitch Channel Point Sounds"
@@ -397,8 +400,6 @@ class PubSub extends WebSocket
 	{
 		global itemArr, waitingForPong, queuedSound, tts_redeem_name
 		
-		;MsgBox,% "Received Data: " Event.data
-		
 		LogToConsole("RECEIVE:`n" Event.data)
 		
 		parsed := JSON_parse(Event.data)
@@ -409,6 +410,11 @@ class PubSub extends WebSocket
 		if (parsed.data.message)
 		{
 			parsed2 := JSON_parse(parsed.data.message)
+			
+			; be sure not to play sound twice for rewards that act as requests that can be fulfilled or refunded
+			; so acting only on unfulfilled requests ensures we act only when the redemption is claimed by the user
+			if !(parsed2.data.redemption.status = "UNFULFILLED")
+				return
 			
 			if (parsed2.data.redemption.reward.title)
 			{
@@ -433,7 +439,6 @@ class PubSub extends WebSocket
 				}
 			}
 		}
-		
 	}
 	
 	OnClose(Event)
@@ -735,7 +740,7 @@ LoadINI:
 		
         LV_Add("",redeemName,filePath)
 		
-		if ((filePath = "Text-to-speech engine") && (!tts_redeem_name))
+		if (filePath = "Text-to-speech engine")
 			tts_redeem_name := redeemName
     }
 	;LV_ModifyCol("","AutoHdr")

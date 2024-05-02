@@ -1,0 +1,13 @@
+v1.0.2
+
+New:
+
+- Added a .reg file to enable Microsoft Mark as a text-to-speech voice. just execute that .reg file and restart the app
+
+Bugfixes:
+
+- Fixed editing a TTS listview entry not updating the actual TTS reward name's variable until app restart
+
+- Fixed oversight where sound would play multiple times for 'request'-type rewards
+
+- Fixed connect on startup option not initializing properly on first run

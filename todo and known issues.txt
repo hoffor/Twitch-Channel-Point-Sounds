@@ -2,10 +2,6 @@
 ISSUES
 ------
 
-connect on start is checked by default, but doesn't actually hold a real value until you uncheck it
-
-if parentheses are present in a redeem name, twitch will send it to us twice in a row... i have no idea why this is
-
 for some gui subs i dont remember why i'm using critical there but is it possible that could stall an open connection or the validate timer?
 
 clicking add account and entering a garbage value will ungrey out the enable monitor button. if you click the button tho it's not a huge deal it just says connection isnt good
