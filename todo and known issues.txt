@@ -2,6 +2,8 @@
 ISSUES
 ------
 
+remove account text spills out of button at the default windows dpi setting
+
 for some gui subs i dont remember why i'm using critical there but is it possible that could stall an open connection or the validate timer?
 
 clicking add account and entering a garbage value will ungrey out the enable monitor button. if you click the button tho it's not a huge deal it just says connection isnt good
@@ -14,6 +16,8 @@ WaitForResponse() with no timeout param is supposed to wait infinitely, but it t
 -----
 IDEAS
 -----
+
+drag n drop for files
 
 tbh could use some more comments describing the purpose of things
 
