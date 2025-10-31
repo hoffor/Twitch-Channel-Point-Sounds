@@ -21,7 +21,7 @@ drag n drop for files
 
 tbh could use some more comments describing the purpose of things
 
-for user safety, hide access token in console output and warn before showing it on the github.io page
+for user safety, warn before showing access token on the github.io page
 
 playsound only plays wav files, so it'd be nice to replace it with something else if possible
 also maybe it'd be good to have sounds overlap and not cut each other off but PlaySound can't do that so this might be a big task
@@ -52,3 +52,4 @@ but it'll be useful if the program CTD's or something and user needs to send a l
 
 employ a system to check that there are no duplicate sound file redeem names in the application (edge case, user would have to WANT to break things)
 the 'add tts' button already warns u, but what if u launch with multiple tts already there. also sound file redeem name duplicates aren't checked
+
