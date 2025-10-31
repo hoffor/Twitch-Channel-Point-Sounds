@@ -1,4 +1,4 @@
-; Twitch Channel Point Sounds v1.0.0 by hoffer (github.com/hoffer)
+; Twitch Channel Point Sounds v1.0.3 by hoffer (github.com/hoffer)
 ; Using GPT v2 license - Contribution is welcome!
 
 ; -----------------
@@ -392,7 +392,8 @@ class PubSub extends WebSocket
 	
 	SendText(text)
 	{
-		LogToConsole("SEND:`n" text)
+		scrubbed_text := RegExReplace(text, "i)""access_token"":""[^""]+""", """access_token"":""<REDACTED>""")
+		LogToConsole("SEND:`n" scrubbed_text)
 		this.Send(text)
 	}
 	
