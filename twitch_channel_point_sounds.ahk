@@ -1,5 +1,5 @@
-; Twitch Channel Point Sounds v1.0.3 by hoffer (github.com/hoffer)
-; Using GPT v2 license - Contribution is welcome!
+; Twitch Channel Point Sounds v1.0.3 by hoffer (github.com/hoffor)
+; Using GPL v2 license - Contribution is welcome!
 
 ; -----------------
 ; SETUP & MAIN LOOP
