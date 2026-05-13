@@ -25,10 +25,6 @@ Done! You can just minimize to tray. Now when a user redeems something, its corr
 
 Also, if you want to use Microsoft Mark as a text-to-speech voice instead of David, just run the included .reg file and restart the app.
 
-### Reporting a bug:
-
-Be sure you have the latest version. Currently it is NOT a good idea to paste the console output here or anywhere, since it will contain your access token, which is not meant to be shared. If you're 100% sure you've scrubbed that out of your post, go for it. It's also currently not a good idea to stream the application window or the linking process, since those show your access token.
-
 ### Building your own .exe from source code:
 Install [AutoHotkey](https://www.autohotkey.com) v1.1 (not v2). Then right click your .ahk file and do "Compile Script (GUI)...". From there you can choose the icon file (twitch_channel_point_sounds.ico).
 
